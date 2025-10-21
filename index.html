@@ -1,17 +1,211 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halcyon Days</title>
-    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" media="screen" href="./style.css" />
 </head>
 <body>
-    <main class="container">
-        <div class="content">
-            <h1>Nothing here.</h1>
-            <h2>Just a blank landing.</h2>
+    <!-- Waybar -->
+    <div class="waybar flex items-center justify-between px-6 py-2">
+        <!-- Left: Workspaces -->
+        <div class="flex items-center gap-2">
+            <div class="workspace active">1</div>
+            <div class="workspace">2</div>
+            <div class="workspace">3</div>
+            <div class="workspace">4</div>
         </div>
-    </main>
+
+        <!-- Center: Media Player -->
+        <div class="flex items-center gap-3 px-2 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30">
+            <img src="./golden.png" alt="Huntr/x - Golden" class="w-6 h-6 rounded-md">
+            <div class="flex flex-col">
+                <span class="text-xs font-semibold text-purple-300">Golden</span>
+                <span class="text-xs text-gray-400">Huntr/x</span>
+            </div>
+            <!-- CAVA Waveform -->
+            <div class="flex items-center gap-1 ml-3" id="cava-waveform">
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+                <div class="cava-bar"></div>
+            </div>
+        </div>
+
+        <!-- Right: WiFi Stats and Clock -->
+        <div class="flex items-center gap-4">
+            <!-- WiFi Stats -->
+            <div class="wifi-stats flex items-center gap-3 px-3 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30">
+                <div class="flex items-center gap-1">
+                    <span class="text-xs text-gray-400">↓</span>
+                    <span class="text-xs font-mono accent-purple wifi-stat-value" id="wifi-download">0 KB/s</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="text-xs text-gray-400">↑</span>
+                    <span class="text-xs font-mono accent-purple wifi-stat-value" id="wifi-upload">0 KB/s</span>
+                </div>
+            </div>
+            
+            <!-- Clock -->
+            <div class="flex items-center gap-2 font-mono text-sm accent-purple" id="clock">
+                --:--
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content - Dwindle Layout -->
+    <div class="dwindle-grid">
+        <!-- Main Tile: About/Profile -->
+        <div class="tile-window tile-main flex flex-col">
+            <div class="window-titlebar">
+                <div class="window-dot"></div>
+                <span>~/about</span>
+            </div>
+            <div class="p-8 flex-1 flex flex-col justify-start gap-1">
+                <div>
+                    <div class="w-32 h-32 rounded-full mb-6 relative overflow-hidden">
+                        <img src="./ashley.jpg" alt="Profile Image" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-700/10 pointer-events-none"></div>
+                    </div>
+                </div>
+                <h1 class="text-4xl font-bold">Rachel Dalton</h1>
+                <p class="text-xl accent-purple">Software Engineering Manager</p>
+                <p class="text-gray-300 leading-relaxed py-3">
+                    Passionate about building elegant solutions to complex problems.
+                    Experienced in full-stack development, system architecture, and team leadership.
+                    Always learning, always shipping.
+                </p>
+                <div class="flex gap-4 text-sm">
+                    <div class="flex items-center gap-2">
+                        <span class="accent-purple">📍</span>
+                        <span>Radford, VA</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="accent-purple">✉️</span>
+                        <span>rachel @ this domain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Top Right: Skills -->
+        <div class="tile-window tile-top-right flex flex-col">
+            <div class="window-titlebar">
+                <div class="window-dot"></div>
+                <span>~/skills</span>
+            </div>
+            <div class="p-6 flex-1 overflow-auto">
+                <h2 class="text-2xl font-bold mb-4 accent-purple">Technical Skills</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="skill-tag">Agentic Coding</span>
+                    <span class="skill-tag">AI Systems</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">Node.js</span>
+                    <span class="skill-tag">PostgreSQL</span>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">AWS</span>
+                    <span class="skill-tag">Linux</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Middle Right: Experience -->
+        <div class="tile-window tile-mid-right flex flex-col">
+            <div class="window-titlebar">
+                <div class="window-dot"></div>
+                <span>~/experience</span>
+            </div>
+            <div class="p-6 flex-1 overflow-auto">
+                <h2 class="text-2xl font-bold mb-4 accent-purple">Experience</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-semibold text-lg">Software Engineering Manager</h3>
+                        <p class="text-sm text-gray-400">Ozmo, Inc • 2015 - Present</p>
+                        <p class="text-sm text-gray-300 mt-2">Building the future of technical support and leveraging AI systems.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-lg">Senior Software Engineer</h3>
+                        <p class="text-sm text-gray-400">Block.one • 2020 - 2020</p>
+                        <p class="text-sm text-gray-300 mt-2">Pioneering blockchain-based open blogging platforms.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Right: Projects -->
+        <div class="tile-window tile-bottom-right flex flex-col">
+            <div class="window-titlebar">
+                <div class="window-dot"></div>
+                <span>~/projects</span>
+            </div>
+            <div class="p-6 flex-1 overflow-auto">
+                <h2 class="text-2xl font-bold mb-4 accent-purple">Featured Projects</h2>
+                <div class="space-y-4">
+                    <div class="border-l-2 border-purple-500 pl-4">
+                        <h3 class="font-semibold">wanikani-api</h3>
+                        <p class="text-sm text-gray-400">A small Javascript Library to handle interaction with Wanikani's API with no external dependencies</p>
+                    </div>
+                    <div class="border-l-2 border-purple-500 pl-4">
+                        <h3 class="font-semibold">maybe-js</h3>
+                        <p class="text-sm text-gray-400">A simple, useful, but somewhat incorrect implementation of the Maybe monad in Javascript</p>
+                    </div>
+                    <div class="border-l-2 border-purple-500 pl-4">
+                        <h3 class="font-semibold">ozmotree-2018</h3>
+                        <p class="text-sm text-gray-400">Embedded musical christmas tree!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for live clock and wifi stats -->
+    <script>
+        function updateClock() {
+            const now = new Date();
+            let hours = now.getHours();
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            
+            // Convert to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            const hoursStr = String(hours).padStart(2, '0');
+            
+            document.getElementById('clock').textContent = `${hoursStr}:${minutes}:${seconds} ${ampm}`;
+        }
+
+        function updateWifiStats() {
+            // Generate random download speed (50-5000 KB/s)
+            const download = Math.floor(Math.random() * 4950) + 50;
+            // Generate random upload speed (10-1000 KB/s)
+            const upload = Math.floor(Math.random() * 990) + 10;
+            
+            // Format with KB/s or MB/s
+            const formatSpeed = (kbps) => {
+                if (kbps >= 1000) {
+                    return `${(kbps / 1000).toFixed(1)} MB/s`;
+                }
+                return `${kbps} KB/s`;
+            };
+            
+            document.getElementById('wifi-download').textContent = formatSpeed(download);
+            document.getElementById('wifi-upload').textContent = formatSpeed(upload);
+        }
+
+        updateClock();
+        updateWifiStats();
+        setInterval(updateClock, 1000);
+        setInterval(updateWifiStats, 2000); // Update wifi stats every 2 seconds
+    </script>
 </body>
 </html>
