@@ -53,7 +53,7 @@ body {
 
 /* Waybar styles */
 .waybar {
-    background: rgba(15, 15, 20, 0.98);
+    background: rgba(15, 15, 20, 0.7);
     border-bottom: 2px solid #8b5cf6;
     box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
 }
@@ -69,7 +69,7 @@ body {
     border-radius: 4px;
     font-size: 0.75rem;
     transition: all 0.2s;
-    cursor: not-allowed
+    cursor: not-allowed;
 }
 
 .workspace.active {
@@ -87,7 +87,7 @@ body {
 .dwindle-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
     gap: 1rem;
     padding: 1rem;
     min-height: calc(100vh - 64px);
@@ -95,7 +95,12 @@ body {
 
 .tile-main {
     grid-column: 1;
-    grid-row: 1 / 4;
+    grid-row: 1;
+}
+
+.tile-bottom-left {
+    grid-column: 1;
+    grid-row: 2;
 }
 
 .tile-top-right {
@@ -103,14 +108,9 @@ body {
     grid-row: 1;
 }
 
-.tile-mid-right {
-    grid-column: 2;
-    grid-row: 2;
-}
-
 .tile-bottom-right {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 2;
 }
 
 /* Mobile responsive */
@@ -159,6 +159,7 @@ body {
     border-radius: 6px;
     font-size: 0.875rem;
     transition: all 0.2s;
+    cursor: default;
 }
 
 .skill-tag:hover {
