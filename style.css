@@ -152,6 +152,11 @@ body {
     color: #a78bfa;
 }
 
+/* Remove list styling for skill and project lists */
+.skill-list {
+    list-style: none;
+}
+
 .skill-tag {
     background: rgba(139, 92, 246, 0.2);
     border: 1px solid rgba(139, 92, 246, 0.4);
