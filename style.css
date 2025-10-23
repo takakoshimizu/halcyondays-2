@@ -13,8 +13,9 @@ body {
 
 /* Glowing purple border effect */
 .tile-window {
-    background: rgba(20, 20, 25, 0.80);
+    background: rgba(20, 20, 25, 0.85);
     border: 2px solid #8b5cf6;
+    border-radius: 12px;
     box-shadow:
         0 0 10px rgba(139, 92, 246, 0.3),
         0 0 20px rgba(139, 92, 246, 0.2),
