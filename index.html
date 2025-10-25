@@ -159,29 +159,54 @@
             </div>
         </section>
 
-        <section class="tile-window tile-bottom-right flex flex-col">
-            <div class="window-titlebar">
-                <div class="window-dot"></div>
-                <span>~/projects</span>
-            </div>
-            <div class="p-6 flex-1 overflow-auto">
-                <h2 class="text-2xl font-bold mb-4 accent-purple">Featured Projects</h2>
-                <ul class="space-y-4">
-                    <li class="border-l-2 border-purple-500 pl-4">
-                        <h3 class="font-semibold">wanikani-api</h3>
-                        <p class="text-sm text-gray-400">A small Javascript Library to handle interaction with Wanikani's API with no external dependencies</p>
-                    </li>
-                    <li class="border-l-2 border-purple-500 pl-4">
-                        <h3 class="font-semibold">maybe-js</h3>
-                        <p class="text-sm text-gray-400">A simple, useful, but somewhat incorrect implementation of the Maybe monad in Javascript</p>
-                    </li>
-                    <li class="border-l-2 border-purple-500 pl-4">
-                        <h3 class="font-semibold">ozmotree-2018</h3>
-                        <p class="text-sm text-gray-400">Embedded musical christmas tree!</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        <div class="tile-bottom-right flex flex-row gap-2">
+            <section class="tile-window flex flex-col basis-1/2 grow-0 shrink-0">
+                <div class="window-titlebar">
+                    <div class="window-dot"></div>
+                    <span>~/projects</span>
+                </div>
+                <div class="p-6 flex-1 overflow-auto">
+                    <h2 class="text-2xl font-bold mb-4 accent-purple">Featured Projects</h2>
+                    <ul class="space-y-4">
+                        <li class="border-l-2 border-purple-500 pl-4">
+                            <h3 class="font-semibold"><a href="https://github.com/takakoshimizu/wanikani-api">wanikani-api</a></h3>
+                            <p class="text-sm text-gray-400">A small Javascript Library to handle interaction with Wanikani's API with no external dependencies</p>
+                        </li>
+                        <li class="border-l-2 border-purple-500 pl-4">
+                            <h3 class="font-semibold"><a href="https://github.com/takakoshimizu/maybe-js">maybe-js</a></h3>
+                            <p class="text-sm text-gray-400">A simple, useful, but somewhat incorrect implementation of the Maybe monad in Javascript</p>
+                        </li>
+                        <li class="border-l-2 border-purple-500 pl-4">
+                            <h3 class="font-semibold"><a href="https://github.com/takakoshimizu/ozmotree-2018">ozmotree-2018</a></h3>
+                            <p class="text-sm text-gray-400">Embedded musical christmas tree!</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="tile-window flex flex-col basis-1/2 grow-0 shrink-0">
+                <div class="window-titlebar">
+                    <div class="window-dot"></div>
+                    <span>~/interests</span>
+                </div>
+                <div class="p-6 flex-1 overflow-auto">
+                    <h2 class="text-2xl font-bold mb-4 accent-purple">My Interests</h2>
+                    <ul class="space-y-4">
+                        <li class="border-l-2 border-purple-500 pl-4">
+                            <h3 class="font-semibold">Epic Fantasy Fiction</h3>
+                            <p class="text-sm text-gray-400">Brandon Sanderson, Mark Lawrence, Patrick Rothfuss, Robin Hobb, and more!</p>
+                        </li>
+                        <li class="border-l-2 border-purple-500 pl-4">
+                            <h3 class="font-semibold">Anime</h3>
+                            <p class="text-sm text-gray-400">Unfortunate lifelong weeb.</p>
+                        </li>
+                        <li class="border-l-2 border-purple-500 pl-4">
+                            <h3 class="font-semibold">Gaming</h3>
+                            <p class="text-sm text-gray-400">Currently playing the entire Trails series from the start. God help me.</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
     </main>
 
     <!-- JavaScript for live clock and wifi stats -->
