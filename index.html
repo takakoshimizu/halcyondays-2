@@ -209,45 +209,7 @@
         </div>
     </main>
 
-    <!-- JavaScript for live clock and wifi stats -->
-    <script>
-        function updateClock() {
-            const now = new Date();
-            let hours = now.getHours();
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            
-            // Convert to 12-hour format
-            hours = hours % 12;
-            hours = hours ? hours : 12; // the hour '0' should be '12'
-            const hoursStr = String(hours).padStart(2, '0');
-            
-            document.getElementById('clock').textContent = `${hoursStr}:${minutes}:${seconds} ${ampm}`;
-        }
-
-        function updateWifiStats() {
-            // Generate random download speed (50-5000 KB/s)
-            const download = Math.floor(Math.random() * 4950) + 50;
-            // Generate random upload speed (10-1000 KB/s)
-            const upload = Math.floor(Math.random() * 990) + 10;
-            
-            // Format with KB/s or MB/s
-            const formatSpeed = (kbps) => {
-                if (kbps >= 1000) {
-                    return `${(kbps / 1000).toFixed(1)} MB/s`;
-                }
-                return `${kbps} KB/s`;
-            };
-            
-            document.getElementById('wifi-download').textContent = formatSpeed(download);
-            document.getElementById('wifi-upload').textContent = formatSpeed(upload);
-        }
-
-        updateClock();
-        updateWifiStats();
-        setInterval(updateClock, 1000);
-        setInterval(updateWifiStats, 2000); // Update wifi stats every 2 seconds
-    </script>
+    <!-- Dynamic features: clock and wifi stats -->
+    <script src="./app.js"></script>
 </body>
 </html>
