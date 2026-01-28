@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" media="screen" href="./style.css" />
 </head>
+
 <body>
     <!-- Waybar -->
     <header class="waybar flex items-center justify-between px-6 py-2">
@@ -19,7 +21,8 @@
         </div>
 
         <!-- Center: Media Player -->
-        <aside class="flex items-center gap-3 px-2 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30">
+        <aside
+            class="flex items-center gap-3 px-2 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30">
             <img src="./golden.png" alt="Huntr/x - Golden" class="w-6 h-6 rounded-md">
             <div class="flex flex-col">
                 <span class="text-xs font-semibold text-purple-300">Golden</span>
@@ -43,7 +46,8 @@
         <!-- Right: WiFi Stats and Clock -->
         <div class="flex items-center gap-4">
             <!-- WiFi Stats -->
-            <div class="wifi-stats flex items-center gap-3 px-3 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30">
+            <div
+                class="wifi-stats flex items-center gap-3 px-3 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30">
                 <div class="flex items-center gap-1">
                     <span class="text-xs text-gray-400">↓</span>
                     <span class="text-xs font-mono accent-purple wifi-stat-value" id="wifi-download">0 KB/s</span>
@@ -73,7 +77,9 @@
                 <div>
                     <div class="w-32 h-32 rounded-full mb-6 relative overflow-hidden">
                         <img src="./ashley.jpg" alt="Profile Image" class="w-full h-full object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-700/10 pointer-events-none"></div>
+                        <div
+                            class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-700/10 pointer-events-none">
+                        </div>
                     </div>
                 </div>
                 <h1 class="text-4xl font-bold">Rachel Dalton</h1>
@@ -107,7 +113,8 @@
                     <div>
                         <h3 class="font-semibold text-lg">Software Engineering Manager</h3>
                         <p class="text-sm text-gray-400">Ozmo, Inc • 2015 - Present</p>
-                        <p class="text-sm text-gray-300 mt-2">Building the future of technical support and leveraging AI systems.</p>
+                        <p class="text-sm text-gray-300 mt-2">Building the future of technical support and leveraging AI
+                            systems.</p>
                     </div>
                     <div>
                         <h3 class="font-semibold text-lg">Senior Software Engineer</h3>
@@ -117,7 +124,8 @@
                     <div>
                         <h3 class="font-semibold text-lg">Intermediate Software Engineer</h3>
                         <p class="text-sm text-gray-400">TEKsystems • 2013 - 2015</p>
-                        <p class="text-sm text-gray-300 mt-2">Modernized legacy applications and improved system performance.</p>
+                        <p class="text-sm text-gray-300 mt-2">Modernized legacy applications and improved system
+                            performance.</p>
                     </div>
                 </div>
             </div>
@@ -145,6 +153,7 @@
                     <li class="skill-tag">Github Copilot</li>
                     <li class="skill-tag">Codex</li>
                     <li class="skill-tag">Claude Code</li>
+                    <li class="skill-tag">Antigravity</li>
                     <li class="skill-tag">LLM-assisted workflows</li>
                     <li class="skill-tag">Prompt engineering</li>
                 </ul>
@@ -169,15 +178,20 @@
                     <h2 class="text-2xl font-bold mb-4 accent-purple">Featured Projects</h2>
                     <ul class="space-y-4">
                         <li class="border-l-2 border-purple-500 pl-4">
-                            <h3 class="font-semibold"><a href="https://github.com/takakoshimizu/wanikani-api">wanikani-api</a></h3>
-                            <p class="text-sm text-gray-400">A small Javascript Library to handle interaction with Wanikani's API with no external dependencies</p>
+                            <h3 class="font-semibold"><a
+                                    href="https://github.com/takakoshimizu/wanikani-api">wanikani-api</a></h3>
+                            <p class="text-sm text-gray-400">A small Javascript Library to handle interaction with
+                                Wanikani's API with no external dependencies</p>
                         </li>
                         <li class="border-l-2 border-purple-500 pl-4">
-                            <h3 class="font-semibold"><a href="https://github.com/takakoshimizu/maybe-js">maybe-js</a></h3>
-                            <p class="text-sm text-gray-400">A simple, useful, but somewhat incorrect implementation of the Maybe monad in Javascript</p>
+                            <h3 class="font-semibold"><a href="https://github.com/takakoshimizu/maybe-js">maybe-js</a>
+                            </h3>
+                            <p class="text-sm text-gray-400">A simple, useful, but somewhat incorrect implementation of
+                                the Maybe monad in Javascript</p>
                         </li>
                         <li class="border-l-2 border-purple-500 pl-4">
-                            <h3 class="font-semibold"><a href="https://github.com/takakoshimizu/ozmotree-2018">ozmotree-2018</a></h3>
+                            <h3 class="font-semibold"><a
+                                    href="https://github.com/takakoshimizu/ozmotree-2018">ozmotree-2018</a></h3>
                             <p class="text-sm text-gray-400">Embedded musical christmas tree!</p>
                         </li>
                     </ul>
@@ -193,7 +207,8 @@
                     <ul class="space-y-4">
                         <li class="border-l-2 border-purple-500 pl-4">
                             <h3 class="font-semibold">Epic Fantasy Fiction</h3>
-                            <p class="text-sm text-gray-400">Brandon Sanderson, Mark Lawrence, Patrick Rothfuss, Robin Hobb, and more!</p>
+                            <p class="text-sm text-gray-400">Brandon Sanderson, Mark Lawrence, Patrick Rothfuss, Robin
+                                Hobb, and more!</p>
                         </li>
                         <li class="border-l-2 border-purple-500 pl-4">
                             <h3 class="font-semibold">Anime</h3>
@@ -201,7 +216,8 @@
                         </li>
                         <li class="border-l-2 border-purple-500 pl-4">
                             <h3 class="font-semibold">Gaming</h3>
-                            <p class="text-sm text-gray-400">Playing the entire Trails series from the start. God help me. (Currently on Trails into Reverie)</p>
+                            <p class="text-sm text-gray-400">Playing the entire Trails series from the start. God help
+                                me. (Currently on Trails into Reverie)</p>
                         </li>
                     </ul>
                 </div>
@@ -212,4 +228,5 @@
     <!-- Dynamic features: clock and wifi stats -->
     <script src="./app.js"></script>
 </body>
+
 </html>
