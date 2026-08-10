@@ -1,6 +1,8 @@
+import './style.css';
+
 /**
  * Halcyon Days - Dynamic UI Features
- * Handles clock updates and network stats simulation
+ * Handles clock updates for the waybar.
  */
 
 (function() {
@@ -9,19 +11,11 @@
     // Configuration constants
     const CONFIG = {
         CLOCK_UPDATE_INTERVAL: 1000,        // 1 second
-        WIFI_UPDATE_INTERVAL: 2000,         // 2 seconds
-        WIFI_DOWNLOAD_MIN: 50,              // KB/s
-        WIFI_DOWNLOAD_MAX: 5000,            // KB/s
-        WIFI_UPLOAD_MIN: 10,                // KB/s
-        WIFI_UPLOAD_MAX: 1000,              // KB/s
-        SPEED_THRESHOLD_MB: 1000,           // KB/s threshold for MB display
     };
 
     // DOM element cache
     const elements = {
         clock: null,
-        wifiDownload: null,
-        wifiUpload: null,
     };
 
     /**
@@ -30,11 +24,8 @@
      */
     function initializeElements() {
         elements.clock = document.getElementById('clock');
-        elements.wifiDownload = document.getElementById('wifi-download');
-        elements.wifiUpload = document.getElementById('wifi-upload');
 
-        // Validate all elements exist
-        return elements.clock && elements.wifiDownload && elements.wifiUpload;
+        return !!elements.clock;
     }
 
     /**
@@ -73,51 +64,14 @@
     }
 
     /**
-     * Generate random number within range
-     * @param {number} min - Minimum value (inclusive)
-     * @param {number} max - Maximum value (inclusive)
-     * @returns {number} Random integer in range
-     */
-    function randomInRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-
-    /**
-     * Format network speed for display
-     * @param {number} kbps - Speed in KB/s
-     * @returns {string} Formatted speed string
-     */
-    function formatSpeed(kbps) {
-        if (kbps >= CONFIG.SPEED_THRESHOLD_MB) {
-            return `${(kbps / 1000).toFixed(1)} MB/s`;
-        }
-        return `${kbps} KB/s`;
-    }
-
-    /**
-     * Update WiFi stats with simulated network speeds
-     */
-    function updateWifiStats() {
-        if (!elements.wifiDownload || !elements.wifiUpload) return;
-
-        const download = randomInRange(CONFIG.WIFI_DOWNLOAD_MIN, CONFIG.WIFI_DOWNLOAD_MAX);
-        const upload = randomInRange(CONFIG.WIFI_UPLOAD_MIN, CONFIG.WIFI_UPLOAD_MAX);
-
-        elements.wifiDownload.textContent = formatSpeed(download);
-        elements.wifiUpload.textContent = formatSpeed(upload);
-    }
-
-    /**
      * Start all update intervals
      */
     function startUpdates() {
-        // Initial updates
+        // Initial update
         updateClock();
-        updateWifiStats();
 
         // Periodic updates
         setInterval(updateClock, CONFIG.CLOCK_UPDATE_INTERVAL);
-        setInterval(updateWifiStats, CONFIG.WIFI_UPDATE_INTERVAL);
     }
 
     /**

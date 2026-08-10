@@ -4,9 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halcyon Days</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" media="screen" href="./style.css" />
+    <title>Halcyon Days — Rachel Dalton</title>
+    <meta name="description" content="Personal landing page for Rachel Dalton, a Software Engineering Manager passionate about elegant solutions to complex problems.">
+    <meta name="theme-color" content="#0a0a0a">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Halcyon Days — Rachel Dalton">
+    <meta property="og:description" content="Personal landing page for Rachel Dalton, a Software Engineering Manager passionate about elegant solutions to complex problems.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://halcyond.net/ashley.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Halcyon Days — Rachel Dalton">
+    <meta name="twitter:description" content="Personal landing page for Rachel Dalton, a Software Engineering Manager passionate about elegant solutions to complex problems.">
+    <meta name="twitter:image" content="https://halcyond.net/ashley.jpg">
+
 </head>
 
 <body>
@@ -43,22 +56,8 @@
             </div>
         </aside>
 
-        <!-- Right: WiFi Stats and Clock -->
+        <!-- Right: Clock -->
         <div class="flex items-center gap-4">
-            <!-- WiFi Stats -->
-            <div
-                class="wifi-stats flex items-center gap-3 px-3 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30">
-                <div class="flex items-center gap-1">
-                    <span class="text-xs text-gray-400">↓</span>
-                    <span class="text-xs font-mono accent-purple wifi-stat-value" id="wifi-download">0 KB/s</span>
-                </div>
-                <div class="flex items-center gap-1">
-                    <span class="text-xs text-gray-400">↑</span>
-                    <span class="text-xs font-mono accent-purple wifi-stat-value" id="wifi-upload">0 KB/s</span>
-                </div>
-            </div>
-
-            <!-- Clock -->
             <time class="flex items-center gap-2 font-mono text-sm accent-purple" id="clock">
                 --:--
             </time>
@@ -91,11 +90,21 @@
                 </p>
                 <address class="flex gap-4 text-sm not-italic">
                     <div class="flex items-center gap-2">
-                        <span class="accent-purple">📍</span>
+                        <svg class="w-4 h-4 accent-purple" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
                         <span>Radford, VA</span>
                     </div>
                     <div class="flex items-center gap-2">
-                        <span class="accent-purple">✉️</span>
+                        <svg class="w-4 h-4 accent-purple" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
                         <span>rachel @ this domain</span>
                     </div>
                 </address>
@@ -215,8 +224,8 @@
         </div>
     </main>
 
-    <!-- Dynamic features: clock and wifi stats -->
-    <script src="./app.js"></script>
+    <!-- Dynamic features: clock -->
+    <script type="module" src="./app.js"></script>
 </body>
 <!-- this site was admittedly vibed and I shan't be doing it again -->
 </html>
