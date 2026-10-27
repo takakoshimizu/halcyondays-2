@@ -9,7 +9,16 @@
 }
 
 body {
-    background: url('vivian.png') no-repeat center center / cover, #0a0a0a;
+    background-color: #0a0a0a;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    /* JPEG for browsers that drop image-set(); WebP where it is supported. */
+    background-image: url('vivian.jpg');
+    background-image: image-set(
+        url('vivian.webp') type('image/webp'),
+        url('vivian.jpg') type('image/jpeg')
+    );
     color: #e0e0e0;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     overflow-x: hidden;
@@ -122,12 +131,12 @@ body {
 @media (max-width: 800px) {
     .dwindle-grid {
         grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-rows: none;
     }
 
     .tile-main,
+    .tile-bottom-left,
     .tile-top-right,
-    .tile-mid-right,
     .tile-bottom-right {
         grid-column: 1;
         grid-row: auto;
@@ -135,6 +144,11 @@ body {
 
     .tile-bottom-right {
         flex-direction: column !important;
+    }
+
+    .tile-bottom-right > .tile-window {
+        flex-basis: auto;
+        width: 100%;
     }
 }
 
@@ -275,5 +289,29 @@ body {
 
     .dwindle-grid {
         min-height: 100vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cava-bar:nth-child(n) {
+        animation: none;
+        transition: none;
+    }
+
+    .cava-bar:nth-child(1) { height: 6px; }
+    .cava-bar:nth-child(2) { height: 14px; }
+    .cava-bar:nth-child(3) { height: 9px; }
+    .cava-bar:nth-child(4) { height: 18px; }
+    .cava-bar:nth-child(5) { height: 11px; }
+    .cava-bar:nth-child(6) { height: 16px; }
+    .cava-bar:nth-child(7) { height: 8px; }
+    .cava-bar:nth-child(8) { height: 13px; }
+    .cava-bar:nth-child(9) { height: 5px; }
+    .cava-bar:nth-child(10) { height: 15px; }
+
+    .tile-window,
+    .workspace,
+    .skill-tag {
+        transition: none;
     }
 }
