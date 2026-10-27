@@ -1,3 +1,7 @@
+import '@fontsource/inter/latin-400.css';
+import '@fontsource/inter/latin-500.css';
+import '@fontsource/inter/latin-600.css';
+import '@fontsource/inter/latin-700.css';
 import './style.css';
 
 /**
@@ -49,6 +53,22 @@ import './style.css';
     }
 
     /**
+     * Local datetime value for the clock's datetime attribute
+     * @param {Date} date
+     * @returns {string} YYYY-MM-DDTHH:mm:ss
+     */
+    function toDateTimeLocal(date) {
+        const year = date.getFullYear();
+        const month = padTime(date.getMonth() + 1);
+        const day = padTime(date.getDate());
+        const hours = padTime(date.getHours());
+        const minutes = padTime(date.getMinutes());
+        const seconds = padTime(date.getSeconds());
+
+        return `${year}-${month}-${day}T${hours}:${minutes}:${seconds}`;
+    }
+
+    /**
      * Update the clock display with current time
      */
     function updateClock() {
@@ -60,6 +80,7 @@ import './style.css';
         const seconds = padTime(now.getSeconds());
         const hoursStr = padTime(hours);
 
+        elements.clock.dateTime = toDateTimeLocal(now);
         elements.clock.textContent = `${hoursStr}:${minutes}:${seconds} ${ampm}`;
     }
 

@@ -7,11 +7,15 @@
     <title>Halcyon Days — Rachel Dalton</title>
     <meta name="description" content="Personal landing page for Rachel Dalton, a Software Engineering Manager passionate about elegant solutions to complex problems.">
     <meta name="theme-color" content="#0a0a0a">
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon.png" type="image/png" sizes="32x32">
+    <link rel="canonical" href="https://halcyond.net/">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Halcyon Days — Rachel Dalton">
     <meta property="og:description" content="Personal landing page for Rachel Dalton, a Software Engineering Manager passionate about elegant solutions to complex problems.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://halcyond.net/">
     <meta property="og:image" content="https://halcyond.net/ashley.jpg">
 
     <!-- Twitter -->
@@ -25,18 +29,22 @@
 <body>
     <!-- Waybar -->
     <header class="waybar flex items-center justify-between px-6 py-2">
-        <!-- Left: Workspaces -->
-        <div class="flex items-center gap-2">
-            <div class="workspace active">1</div>
-            <div class="workspace">2</div>
-            <div class="workspace">3</div>
-            <div class="workspace">4</div>
+        <!-- Left: Workspaces (decorative; not controls) -->
+        <div class="flex items-center gap-2" aria-hidden="true">
+            <div class="workspace active" role="presentation">1</div>
+            <div class="workspace" role="presentation">2</div>
+            <div class="workspace" role="presentation">3</div>
+            <div class="workspace" role="presentation">4</div>
         </div>
 
-        <!-- Center: Media Player -->
+        <!-- Center: Media Player (decorative chrome) -->
         <aside
-            class="flex items-center gap-3 px-2 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30">
-            <img src="./golden.png" alt="Huntr/x - Golden" class="w-6 h-6 rounded-md">
+            class="flex items-center gap-3 px-2 py-1 bg-opacity-20 bg-purple-500 rounded-lg border border-purple-500 border-opacity-30"
+            aria-hidden="true">
+            <picture>
+                <source srcset="./golden.webp" type="image/webp">
+                <img src="./golden.png" alt="Huntr/x - Golden" class="w-6 h-6 rounded-md" width="24" height="24">
+            </picture>
             <div class="flex flex-col">
                 <span class="text-xs font-semibold text-purple-300">Golden</span>
                 <span class="text-xs text-gray-400">Huntr/x</span>
@@ -58,7 +66,7 @@
 
         <!-- Right: Clock -->
         <div class="flex items-center gap-4">
-            <time class="flex items-center gap-2 font-mono text-sm accent-purple" id="clock">
+            <time class="flex items-center gap-2 font-mono text-sm accent-purple" id="clock" datetime="">
                 --:--
             </time>
         </div>
@@ -75,7 +83,7 @@
             <div class="p-8 flex-1 flex flex-col justify-start gap-1">
                 <div>
                     <div class="w-32 h-32 rounded-full mb-6 relative overflow-hidden">
-                        <img src="./ashley.jpg" alt="Profile Image" class="w-full h-full object-cover">
+                        <img src="./ashley.jpg" alt="Rachel Dalton" class="w-full h-full object-cover">
                         <div
                             class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-purple-700/10 pointer-events-none">
                         </div>
